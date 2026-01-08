@@ -1,7 +1,7 @@
 {
   "name": "Klinik Pilgaard",
   "short_name": "Pilgaard",
-  "start_url": "/",
+  "start_url": "/klinikpilgaard-app/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#5A7F71",
@@ -17,4 +17,5 @@
       "type": "image/png"
     }
   ]
+
 }
