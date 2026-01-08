@@ -136,7 +136,7 @@ main {
   margin-top: 16px;
 }
 .hero-logo {
-  width: 120px;
+  width: 180px;
   height: auto;
   margin: 16px auto;
   display: block;
@@ -275,6 +275,7 @@ main {
 .footer-info {
   padding-bottom: 80px; /* giver plads over bundmenuen */
 }
+
 
 
 
