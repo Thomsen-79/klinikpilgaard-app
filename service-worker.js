@@ -32,3 +32,5 @@ self.addEventListener('fetch', event => {
   );
 });
 
+
+
