@@ -229,73 +229,75 @@
 
     </main>
 
-    <!-- Bundnavigation -->
-    <nav class="bottombar">
-      <button onclick="showView('view-home')">Forside</button>
-      <button onclick="showView('view-treatments')">Behandlinger</button>
-      <button onclick="showView('view-clips')">Klippekort</button>
-      <button onclick="showView('view-book')">Book</button>
-      <button onclick="showView('view-my')">Min side</button>
-      <!-- Dark mode knap -->
-      <button onclick="toggleDarkMode()" id="themeToggle">🌙</button>
+<!-- Bundnavigation -->
+<nav class="bottombar">
+  <button onclick="showView('view-home')">Forside</button>
+  <button onclick="showView('view-treatments')">Behandlinger</button>
+  <button onclick="showView('view-clips')">Klippekort</button>
+  <button onclick="showView('view-book')">Book</button>
+  <button onclick="showView('view-my')">Min side</button>
+  <!-- Dark mode knap -->
+  <button onclick="toggleDarkMode()" id="themeToggle">🌙</button>
+</nav>
+</div>
 
-    </nav>
-  </div>
+<!-- Footer -->
+<footer class="footer-info">
+  Klinik Pilgaard<br>
+  CVR-nr.: DK38599771<br>
+  Snedstedvej 69<br>
+  7752 Snedsted<br>
+  Tlf.: <a href="tel:31778261">31 77 82 61</a><br>
+  Web: <a href="https://www.klinikpilgaard.dk" target="_blank">www.klinikpilgaard.dk</a><br>
+  Mail: <a href="mailto:info@klinikpilgaard.dk">info@klinikpilgaard.dk</a>
+</footer>
 
-  <script>
-    const BOOKING_URL = 'https://system.easypractice.net/book/book-en-tid-76#choose-service';
-    const MAPS_URL = 'https://maps.google.com/?q=Klinik+Pilgaard+Snedstedvej+69,+7752+Snedsted';
-
-    function showView(id) {
-      document.querySelectorAll('.view').forEach(v => v.classList.remove('view-active'));
-      document.getElementById(id).classList.add('view-active');
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    }
-
-    function openBooking() {
-      window.open(BOOKING_URL, '_blank');
-    }
-
-    function openMaps() {
-      window.open(MAPS_URL, '_blank');
-    }
-
-    // PWA: registrer service worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/klinikpilgaard-app/service-worker.js');
-      });
-    }
-   </script>
-
-    <!-- Footer -->
-    <footer class="footer-info">
-      Klinik Pilgaard<br>
-      CVR-nr.: DK38599771<br>
-      Snedstedvej 69<br>
-      7752 Snedsted<br>
-      Tlf.: <a href="tel:31778261">31 77 82 61</a><br>
-      Web: <a href="https://www.klinikpilgaard.dk" target="_blank">www.klinikpilgaard.dk</a><br>
-      Mail: <a href="mailto:info@klinikpilgaard.dk">info@klinikpilgaard.dk</a>
-    </footer>
 <script>
+  const BOOKING_URL = 'https://system.easypractice.net/book/book-en-tid-76#choose-service';
+  const MAPS_URL = 'https://maps.google.com/?q=Klinik+Pilgaard+Snedstedvej+69,+7752+Snedsted';
+
+  function showView(id) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('view-active'));
+    document.getElementById(id).classList.add('view-active');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  function openBooking() {
+    window.open(BOOKING_URL, '_blank');
+  }
+
+  function openMaps() {
+    window.open(MAPS_URL, '_blank');
+  }
+
+  // PWA: registrer service worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/klinikpilgaard-app/service-worker.js');
+    });
+  }
+
+  // Dark mode toggle + ikon
+  function updateThemeIcon() {
+    const btn = document.getElementById('themeToggle');
+    const isDark = document.body.classList.contains('dark-mode');
+    btn.textContent = isDark ? '☀️' : '🌙';
+  }
+
   function toggleDarkMode() {
     const isDark = document.body.classList.toggle('dark-mode');
     localStorage.setItem('darkMode', isDark);
+    updateThemeIcon();
   }
 
   // Load saved theme on startup
   if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark-mode');
   }
+
+  // Set correct icon on startup
+  updateThemeIcon();
 </script>
 
-
-  </body>
+</body>
 </html>
-
-
-
-
-
-
