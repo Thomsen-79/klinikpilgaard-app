@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <title>Klinik Pilgaard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#5A7F71" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <link rel="icon" href="assets/logo-192.png" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <h1>Klinik Pilgaard</h1>
+    </header>
+
+    <!-- Main content -->
+    <main id="view-container">
+
+      <!-- Forside -->
+      <section class="view view-active" id="view-home">
+        <div class="hero">
+          <h2>Professionel massage med fokus på velvære, smertelindring og balance i kroppen.</h2>
+          <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          <div class="hero-actions">
+            <button class="btn btn-secondary" onclick="showView('view-treatments')">Se behandlinger</button>
+            <button class="btn btn-secondary" onclick="showView('view-clips')">Se klippekort</button>
+          </div>
+          <p class="small-text">Behandlingerne tilpasses altid dine behov.</p>
+        </div>
+      </section>
+
+      <!-- Behandlinger -->
+      <section class="view" id="view-treatments">
+        <h2>Behandlinger</h2>
+        <p>Her kan du se alle behandlinger jeg tilbyder hos Klinik Pilgaard. Vælg den behandling, der passer bedst til dine behov – og book nemt din tid online.</p>
+
+        <div class="card-list">
+
+          <!-- 1 -->
+          <article class="card">
+            <h3>Halv massage – 25 min</h3>
+            <p class="price">290 kr.</p>
+            <p>Massage af Problemområder. Anbefales kun som nødløsning, da man bør få masseret alle muskler i området for bedste behandling.</p>
+            <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          </article>
+
+          <!-- 2 -->
+          <article class="card">
+            <h3>Øvre kropsmassage – 50 min</h3>
+            <p class="price">525 kr.</p>
+            <p>Massage af nakke, skuldre, ryg og øvre baller.</p>
+            <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          </article>
+
+          <!-- 3 -->
+          <article class="card">
+            <h3>Helkropsmassage – 75 min</h3>
+            <p class="price">690 kr.</p>
+            <p>Massage af nakke, skuldre, ryg, baller og ben, samt arme.</p>
+            <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          </article>
+
+          <!-- 4 -->
+          <article class="card">
+            <h3>Hotstone massage – 60 min</h3>
+            <p class="price">690 kr.</p>
+            <p>Lækker dybdegående massage med brug af ca 60gr varme basaltsten. Smelter gamle spændinger væk og løsner enestående op for hårde infiltreret muskler.</p>
+            <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          </article>
+
+          <!-- 5 -->
+          <article class="card">
+            <h3>Massage Combi – 50 min</h3>
+            <p class="price">525 kr.</p>
+            <p>Massage af nakke, ryg, skuldre, øvre baller og afsluttes med hovedmassage.</p>
+            <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          </article>
+
+          <!-- 6 -->
+          <article class="card">
+            <h3>KST/Massage – 50 min</h3>
+            <p class="price">525 kr.</p>
+            <p>En skøn kombination af massage og Kranio Sakral Terapi der både gør godt for muskulaturen og med KTS virker enorm afstressende.</p>
+            <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          </article>
+
+          <!-- 7 -->
+          <article class="card">
+            <h3>Kranio Sakral Terapi – 50 min</h3>
+            <p class="price">525 kr.</p>
+            <p>Bringer balance i krop og sjæl. Blid, men særdeles effektiv behandling.</p>
+            <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          </article>
+
+          <!-- 8 -->
+          <article class="card">
+            <h3>Indisk hovedmassage – 20 min</h3>
+            <p class="price">290 kr.</p>
+            <p>Massage af ansigt, hovedbund, skuldre og nakke.</p>
+            <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          </article>
+
+          <!-- 9 -->
+          <article class="card">
+            <h3>Øre-afspændingsakupunktur – 60 min</h3>
+            <p class="price">595 kr.</p>
+            <p>Anvendes til at lindre kroniske og akutte smerter i hele kroppen, Bla. stress, angst, depression søvnløshed og meget mere</p>
+            <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          </article>
+
+          <!-- 10 -->
+          <article class="card">
+            <h3>Reset behandling – 30 min</h3>
+            <p class="price">525 kr.</p>
+            <p>Behandling der løsner op i kæbeleddet. Effektiv til bla. hovedpine, tandpine, skære tænder, spændinger, stres, mv.</p>
+            <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          </article>
+
+          <!-- 11 -->
+          <article class="card">
+            <h3>Recorvery Boots – 20-30 min</h3>
+            <p class="price">695 kr.</p>
+            <p>Til behandling af bla. dårlig blodcirkulation, kolde fødder/ben, ødemer, forstuvning, åreknuder og meget meget mere.</p>
+            <button class="btn btn-primary" onclick="openBooking()">Book tid</button>
+          </article>
+          <p class="note">⚠️ Akut tid · 20 min. Ved brug for akut behandling kontakt mig på tlf. +45 31 77 82 65 ⚠️</p>
+
+        </div>
+      </section>
+
+      <!-- Klippekort -->
+      <section class="view" id="view-clips">
+        <h2>Klippekort</h2>
+        <p>Med et klippekort får du flere behandlinger til en fordelagtig pris.</p>
+
+        <div class="card-list">
+
+          <!-- 1 -->
+          <article class="card">
+            <div class="badge">Populært</div>
+            <h3>7x  Øvre massage à 50 min</h3>
+            <p>Gælder til 7 behandlinger á 50 minutters øvre kropsmassagemassage.</p>
+            <p class="price">Normalpris: 3.675 kr. · Klippekort: 3.307 kr.  
+              <span class="save">Du sparer 368 kr.</span>
+            </p>
+          </article>
+
+          <!-- 2 -->
+          <article class="card">
+            <h3>5x helkropsmassage à 75 min</h3>
+            <p>Perfekt til dig, der ønsker regelmæssig behandling og vedligeholdelse af hele kroppen.</p>
+            <p class="price">Normalpris: 3.450 kr. · Klippekort: 3.105 kr.  
+              <span class="save">Du sparer 345 kr.</span>
+            </p>
+          </article>
+
+          <!-- 3 -->
+          <article class="card">
+            <h3>10x Halvmassage à 25 min</h3>
+            <p>Ideelt til dig med specifikke tilbagevendende spændinger.</p>
+            <p class="price">Normalpris: 2.900 kr. · Klippekort: 2.610 kr.  
+              <span class="save">Du sparer 290 kr.</span>
+            </p>
+          </article>
+
+          <!-- 4 -->
+          <article class="card">
+            <h3>5x Indisk à 20 min</h3>
+            <p>Til dig, der ønsker faste pauser med ro, nærvær og velvære.</p>
+            <p class="price">Normalpris: 1.450 kr. · Klippekort: 1.305 kr.  
+              <span class="save">Du sparer 145 kr.</span>
+            </p>
+          </article>
+
+          <!-- 5 -->
+          <article class="card">
+            <h3>3x Akupunktur à 60 min</h3>
+            <p>Til længerevarende behandling af bla stress, angst eller depression.</p>
+            <p class="price">Normalpris: 1.785 kr. · Klippekort: 1.417 kr.  
+              <span class="save">Du sparer 158 kr.</span>
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Book tid -->
+      <section class="view" id="view-book">
+        <h2>Book tid</h2>
+        <p>Du booker din tid sikkert og nemt via vores bookingsystem.</p>
+        <button class="btn btn-primary" onclick="openBooking()">Book nu</button>
+        <p class="small-text">Her kan du også ændre eller aflyse din tid.</p>
+      </section>
+
+      <!-- Min side -->
+      <section class="view" id="view-my">
+        <h2>Min side</h2>
+        <p>Log ind i online booking for at se, ændre eller aflyse dine tider.</p>
+
+        <div class="card-list">
+          <button class="btn btn-full" onclick="openBooking()">Åbn online booking</button>
+          <button class="btn btn-full" onclick="showView('view-contact')">Kontakt Klinik Pilgaard</button>
+        </div>
+      </section>
+
+      <!-- Kontakt & info -->
+      <section class="view" id="view-contact">
+        <h2>Kontakt & info</h2>
+        <p><strong>Klinik Pilgaard</strong></p>
+        <p>[Adresse]</p>
+        <p><a href="tel:+4531778261">Telefon: +45 31 77 82 61</a></p>
+        <p><a href="mailto:info@klinikpilgaard.dk">E-mail: info@klinikpilgaard.dk</a></p>
+        <p>Åbningstider:<p>Åbningstider:<br>Man–fre: 08.00–16.00</p>
+
+
+        <button class="btn btn-secondary" onclick="openMaps()">Åbn i Google Maps</button>
+        <p class="small-text">Har du spørgsmål til en behandling, er du altid velkommen til at kontakte mig.</p>
+      </section>
+
+    </main>
+
+    <!-- Bundnavigation -->
+    <nav class="bottombar">
+      <button onclick="showView('view-home')">Forside</button>
+      <button onclick="showView('view-treatments')">Behandlinger</button>
+      <button onclick="showView('view-clips')">Klippekort</button>
+      <button onclick="showView('view-book')">Book</button>
+      <button onclick="showView('view-my')">Min side</button>
+    </nav>
+  </div>
+
+  <script>
+    const BOOKING_URL = 'https://system.easypractice.net/book/book-en-tid-76#choose-service';
+    const MAPS_URL = 'https://maps.google.com/?q=Klinik+Pilgaard+Snedstedvej+69,+7752+Snedsted';
+
+    function showView(id) {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('view-active'));
+      document.getElementById(id).classList.add('view-active');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    function openBooking() {
+      window.open(BOOKING_URL, '_blank');
+    }
+
+    function openMaps() {
+      window.open(MAPS_URL, '_blank');
+    }
+
+    // PWA: registrer service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+   </script>
+
+    <!-- Footer -->
+    <footer class="footer-info">
+      Klinik Pilgaard<br>
+      CVR-nr.: DK38599771<br>
+      Snedstedvej 69<br>
+      7752 Snedsted<br>
+      Tlf.: <a href="tel:31778261">31 77 82 61</a><br>
+      Web: <a href="https://www.klinikpilgaard.dk" target="_blank">www.klinikpilgaard.dk</a><br>
+      Mail: <a href="mailto:info@klinikpilgaard.dk">info@klinikpilgaard.dk</a>
+    </footer>
+
+  </body>
+</html>
