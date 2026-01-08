@@ -1,4 +1,4 @@
-const CACHE_NAME = 'klinikpilgaard-v2';
+const CACHE_NAME = 'klinikpilgaard-v3';
 const BASE_PATH = '/klinikpilgaard-app';
 
 // Filer der altid skal være tilgængelige offline
@@ -59,6 +59,7 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
 
 
 
