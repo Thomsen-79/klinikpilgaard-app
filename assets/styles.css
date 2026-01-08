@@ -138,10 +138,12 @@ main {
 .hero-logo {
   width: 180px;
   height: auto;
-  margin: 16px auto;
+  margin: 20px auto 0;
   display: block;
   opacity: 0.95;
 }
+
+
 
 /* ===========================
    CARDS
@@ -275,6 +277,7 @@ main {
 .footer-info {
   padding-bottom: 80px; /* giver plads over bundmenuen */
 }
+
 
 
 
