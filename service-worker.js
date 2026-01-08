@@ -1,11 +1,13 @@
 const CACHE_NAME = 'klinik-pilgaard-v1';
+const BASE_PATH = '/klinikpilgaard-app';
+
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.webmanifest',
-  '/assets/styles.css',
-  '/assets/logo-192.png',
-  '/assets/logo-512.png'
+  `${BASE_PATH}/`,
+  `${BASE_PATH}/index.html`,
+  `${BASE_PATH}/manifest.webmanifest`,
+  `${BASE_PATH}/assets/styles.css`,
+  `${BASE_PATH}/assets/logo-192.png`,
+  `${BASE_PATH}/assets/logo-512.png`
 ];
 
 self.addEventListener('install', event => {
@@ -29,3 +31,4 @@ self.addEventListener('fetch', event => {
     caches.match(event.request).then(resp => resp || fetch(event.request))
   );
 });
+
