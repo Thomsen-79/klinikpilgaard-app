@@ -266,3 +266,8 @@ main {
 .footer-info a:hover {
   text-decoration: underline;
 }
+.footer-info {
+  padding-bottom: 80px; /* giver plads over bundmenuen */
+}
+
+
