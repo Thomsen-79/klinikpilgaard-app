@@ -236,6 +236,9 @@
       <button onclick="showView('view-clips')">Klippekort</button>
       <button onclick="showView('view-book')">Book</button>
       <button onclick="showView('view-my')">Min side</button>
+      <!-- Dark mode knap -->
+      <button onclick="toggleDarkMode()" id="themeToggle">🌙</button>
+
     </nav>
   </div>
 
@@ -275,9 +278,22 @@
       Web: <a href="https://www.klinikpilgaard.dk" target="_blank">www.klinikpilgaard.dk</a><br>
       Mail: <a href="mailto:info@klinikpilgaard.dk">info@klinikpilgaard.dk</a>
     </footer>
+<script>
+  function toggleDarkMode() {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', isDark);
+  }
+
+  // Load saved theme on startup
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+  }
+</script>
+
 
   </body>
 </html>
+
 
 
 
