@@ -32,22 +32,6 @@
   --color-muted-text: #666666;
 }
 
-/* Dark mode (automatic via system) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #1A1A1A;
-    --color-muted-bg: #2A2A2A;
-    --color-text: #F2F2F2;
-
-    --color-card-bg: #2A2A2A;
-    --color-border: #444444;
-    --color-shadow: rgba(0,0,0,0.4);
-    --color-muted-text: #AAAAAA;
-
-    --color-primary: #6FAE96;
-    --color-primary-dark: #4C7A66;
-  }
-}
 
 /* Manual dark mode override */
 .dark-mode {
@@ -357,5 +341,6 @@ main {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 
