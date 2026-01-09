@@ -2,6 +2,21 @@
    COLOR SYSTEM
    =========================== */
 
+/* Manuel light mode override */
+.light-mode {
+  --color-primary: #5A7F71;
+  --color-primary-dark: #2F4A3F;
+
+  --color-bg: #FFFFFF;
+  --color-muted-bg: #F4F1EC;
+  --color-text: #333333;
+
+  --color-card-bg: #FFFFFF;
+  --color-border: #DDDDDD;
+  --color-shadow: rgba(0,0,0,0.04);
+  --color-muted-text: #666666;
+}
+
 /* Light mode (default) */
 :root {
   --color-primary: #5A7F71;
@@ -342,4 +357,5 @@ main {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
