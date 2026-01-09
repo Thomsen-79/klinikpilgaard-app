@@ -205,32 +205,43 @@
         <p class="small-text">Her kan du også ændre eller aflyse din tid.</p>
       </section>
 
-      <!-- Min side -->
-      <section class="view" id="view-my">
-        <h2>Min side</h2>
-        <p>Log ind i online booking for at se, ændre eller aflyse dine tider.</p>
 
-        <div class="card-list">
-          <button class="btn btn-full" onclick="openBooking()">Åbn online booking</button>
-          <button class="btn btn-full" onclick="showView('view-contact')">Kontakt Klinik Pilgaard</button>
-        </div>
-      </section>
-
-      <!-- Kontakt & info -->
+      <!-- Kontakt -->
       <section class="view" id="view-contact">
-        <h2>Kontakt & info</h2>
+        <h2>Kontakt</h2>
+
         <p><strong>Klinik Pilgaard</strong></p>
         <p>Snedstedvej 69<br>7752, Snedsted</p>
         <p><a href="tel:+4531778261">Telefon: +45 31 77 82 61</a></p>
         <p><a href="mailto:info@klinikpilgaard.dk">E-mail: info@klinikpilgaard.dk</a></p>
-        <p>Åbningstider:Åbningstider:<br>Man–fre: 08.00–16.00</p>
-
+        <p>Åbningstider:<br>Man–fre: 08.00–16.00</p>
 
         <button class="btn btn-secondary" onclick="openMaps()">Åbn i Google Maps</button>
+
         <p class="small-text">Har du spørgsmål til en behandling, er du altid velkommen til at kontakte mig.</p>
+
+        <form id="kontaktForm" action="https://formspree.io/f/mzddpdva" method="POST" class="kontakt-form">
+          <label for="navn">For- og efternavn*</label>
+          <input type="text" id="navn" name="Navn" required>
+
+          <label for="email">E-mail*</label>
+          <input type="email" id="email" name="Email" required>
+
+          <label for="telefon">Telefonnummer*</label>
+          <input type="tel" id="telefon" name="Telefon" required>
+
+          <label for="besked">Besked*</label>
+          <textarea id="besked" name="Besked" rows="5" required></textarea>
+
+          <button type="submit" class="btn btn-primary">Send besked</button>
+        </form>
+
+        <div id="form-success" class="form-success" style="display:none;">
+          Tak for din besked, jeg kontakter dig snarest muligt 😊
+        </div>
       </section>
 
-    </main>
+
 
 <!-- Bundnavigation -->
 <nav class="bottombar">
@@ -238,7 +249,8 @@
   <button onclick="showView('view-treatments')">Behandlinger</button>
   <button onclick="showView('view-clips')">Klippekort</button>
   <button onclick="showView('view-book')">Book</button>
-  <button onclick="showView('view-my')">Min side</button>
+  <button onclick="showView('view-contact')">Kontakt</button>
+
   <!-- Dark mode knap -->
   <button onclick="toggleDarkMode()" id="themeToggle">🌙</button>
 </nav>
@@ -301,8 +313,48 @@
   // Set correct icon on startup
   updateThemeIcon();
 </script>
+<script>
+document.getElementById("kontaktForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
 
+  const form = e.target;
+  const inputs = form.querySelectorAll("input[required], textarea[required]");
+  let valid = true;
+
+  // Reset borders
+  inputs.forEach(input => {
+    input.style.borderColor = "var(--color-border)";
+  });
+
+  // Check required fields
+  inputs.forEach(input => {
+    if (!input.value.trim()) {
+      input.style.borderColor = "red";
+      valid = false;
+    }
+  });
+
+  if (!valid) {
+    return; // Stop if fields are missing
+  }
+
+  // Send to Formspree
+  const data = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  if (response.ok) {
+    form.reset();
+    document.getElementById("form-success").style.display = "block";
+  }
+});
+</script>
 </body>
 </html>
+
 
 
