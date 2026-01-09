@@ -254,7 +254,6 @@
   <!-- Dark mode knap -->
   <button onclick="toggleDarkMode()" id="themeToggle">🌙</button>
 </nav>
-</div>
 
 <!-- Footer -->
 <footer class="footer-info">
@@ -293,26 +292,39 @@
   }
 
   // Dark mode toggle + ikon
-  function updateThemeIcon() {
+ function updateThemeIcon() {
     const btn = document.getElementById('themeToggle');
     const isDark = document.body.classList.contains('dark-mode');
     btn.textContent = isDark ? '☀️' : '🌙';
   }
 
+  // Skift mellem dark og light mode
   function toggleDarkMode() {
-    const isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', isDark);
+    const body = document.body;
+
+    if (body.classList.contains('dark-mode')) {
+      body.classList.remove('dark-mode');
+      body.classList.add('light-mode');
+      localStorage.setItem('darkMode', 'false');
+    } else {
+      body.classList.remove('light-mode');
+      body.classList.add('dark-mode');
+      localStorage.setItem('darkMode', 'true');
+    }
+
     updateThemeIcon();
   }
 
-  // Load saved theme on startup
+  // Start i sidste valgte tilstand
   if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.add('light-mode');
   }
 
-  // Set correct icon on startup
   updateThemeIcon();
 </script>
+
 <script>
 document.getElementById("kontaktForm").addEventListener("submit", async function(e) {
   e.preventDefault();
@@ -355,6 +367,7 @@ document.getElementById("kontaktForm").addEventListener("submit", async function
 </script>
 </body>
 </html>
+
 
 
 
